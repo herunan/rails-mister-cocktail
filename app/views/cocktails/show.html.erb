@@ -1,0 +1,10 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image %>);">
+  <div class="container">
+    <h1>How to make a <strong><%= @cocktail.name %></strong></h1>
+    <p><%= @cocktail.description %></p>
+  </div>
+</div>
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Delete", cocktail_dose_path(@cocktail.id, dose.id), method: "delete" %></p>
+<% end %>
+<%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail) %>
