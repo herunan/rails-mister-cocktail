@@ -5,14 +5,22 @@
   </div>
 </div>
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-12">
-      <p><%= @cocktail.method %></p>
-      <% @cocktail.doses.each do |dose| %>
-        <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Delete", cocktail_dose_path(@cocktail.id, dose.id), method: "delete" %></p>
-      <% end %>
-      <p><%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail) %></p>
-      <p><%= link_to "< Back to list of cocktails", cocktails_path %></p>
+  <div class="row justify-content-between">
+    <div class="col-12 col-md-6">
+      <h2>Method</h2>
+      <p><%= simple_format @cocktail.method %></p>
+      <%= link_to "< Back to list of cocktails", cocktails_path, html_options = { class: "btn btn-primary" } %></p>
+    </div>
+    <div class="col-12 col-md-5">
+      <h2>Ingredients</h2>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <strong><%= dose.ingredient.name %></strong> - <%= dose.description %> <%= link_to "Delete", cocktail_dose_path(@cocktail.id, dose.id), method: "delete" %>
+          </li>
+        <% end %>
+      </ul>
+      <p><%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail), html_options = { class: "btn btn-primary" } %></p>
     </div>
   </div>
 </div>
