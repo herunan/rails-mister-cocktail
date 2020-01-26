@@ -5,6 +5,7 @@
       <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
+        <%= f.input :method %>
         <%= f.input :image %>
         <%= f.submit "Add cocktail", class: "btn btn-primary" %>
         <% if @cocktail.errors.any? %>
