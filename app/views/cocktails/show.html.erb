@@ -4,7 +4,14 @@
     <p><%= @cocktail.description %></p>
   </div>
 </div>
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Delete", cocktail_dose_path(@cocktail.id, dose.id), method: "delete" %></p>
-<% end %>
-<%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail) %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-12">
+      <% @cocktail.doses.each do |dose| %>
+        <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Delete", cocktail_dose_path(@cocktail.id, dose.id), method: "delete" %></p>
+      <% end %>
+      <p><%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+      <p><%= link_to "< Back to list of cocktails", cocktails_path %></p>
+    </div>
+  </div>
+</div>

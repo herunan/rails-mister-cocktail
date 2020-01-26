@@ -1,6 +1,31 @@
+.navbar-lewagon .navbar-brand, .navbar-lewagon .nav-link, .navbar-toggler-icon {
+  color: $yellow !important;
+  transition: 0.5s ease;
+  &:hover {
+    color: $green !important;
+  }
+}
+
+.navbar-lewagon .form-control {
+  background-color: black;
+  border: none;
+  color: $yellow;
+  width: 135px;
+  &::placeholder {
+    color: $yellow;
+  }
+   &:focus {
+    box-shadow: none;
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+}
+
+// li.nav-item:nth-child(1) > a:nth-child(1)
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: black;
 }
 
 .navbar-lewagon .navbar-collapse {
