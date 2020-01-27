@@ -9,18 +9,19 @@
     <div class="col-12 col-md-6">
       <h2>Method</h2>
       <p><%= simple_format @cocktail.method %></p>
-      <%= link_to "< Back to list of cocktails", cocktails_path, html_options = { class: "btn btn-primary" } %></p>
+      <%= link_to '<i class="fa fa-arrow-left"></i> Back to list of cocktails'.html_safe, cocktails_path, html_options = { :class => "btn btn-primary" } %>
     </div>
     <div class="col-12 col-md-5">
       <h2>Ingredients</h2>
       <ul>
         <% @cocktail.doses.each do |dose| %>
           <li>
-            <strong><%= dose.ingredient.name %></strong> - <%= dose.description %> <%= link_to "Delete", cocktail_dose_path(@cocktail.id, dose.id), method: "delete" %>
+            <strong><%= dose.ingredient.name %></strong> - <%= dose.description %>
+            <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, cocktail_dose_path(@cocktail.id, dose.id), method: "delete" %>
           </li>
         <% end %>
       </ul>
-      <p><%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail), html_options = { class: "btn btn-primary" } %></p>
+      <%= link_to '<i class="fa fa-plus"></i> Add a dose'.html_safe, new_cocktail_dose_path(@cocktail), html_options = { :class => "btn btn-primary" } %>
     </div>
   </div>
 </div>
