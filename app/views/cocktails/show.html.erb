@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, :height => 1000, :crop => :fill if @cocktail.photo.attached? %>);">
   <div class="container">
     <h1>How to make a <strong><%= @cocktail.name %></strong></h1>
     <p><%= @cocktail.description %></p>

@@ -6,7 +6,7 @@
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :method %>
-        <%= f.input :image %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit "Add cocktail", class: "btn btn-primary" %>
         <% if @cocktail.errors.any? %>
           <div class="errors-container">
