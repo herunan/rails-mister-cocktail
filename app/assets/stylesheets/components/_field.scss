@@ -1,0 +1,17 @@
+.form-control {
+  background-color: black;
+  border-color: $yellow;
+  color: $yellow;
+  &::placeholder {
+    color: $yellow;
+  }
+   &:focus {
+    background-color: black;
+    color: $yellow;
+    box-shadow: none;
+    &::placeholder {
+      color: $yellow;
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,8 +1,13 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: %i[show]
-  def index
-    @cocktails = Cocktail.all
-  end
+    def index
+      if params[:query].present?
+        sql_query = "cocktails.name @@ :query OR ingredients.name @@ :query"
+        @cocktails = Cocktail.left_outer_joins(:ingredients).where(sql_query, query: "%#{params[:query]}%")
+      else
+        @cocktails = Cocktail.all
+      end
+    end
 
   def show
     @dose = Dose.new
