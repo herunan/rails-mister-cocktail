@@ -19,9 +19,9 @@ ingredients['drinks'].each do |ingredient|
   Ingredient.create(name: ingredient['strIngredient1'])
 end
 
-# mojito = URI.open('https://images.pexels.com/photos/1146754/pexels-photo-1146754.jpeg')
-# gin_tonic = URI.open('https://images.pexels.com/photos/1170599/pexels-photo-1170599.jpeg')
-# moscow_mule = URI.open('https://images.unsplash.com/photo-1530991808291-7e157454758c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9')
+mojito = URI.open('https://images.pexels.com/photos/1146754/pexels-photo-1146754.jpeg')
+gin_tonic = URI.open('https://images.pexels.com/photos/1170599/pexels-photo-1170599.jpeg')
+moscow_mule = URI.open('https://images.unsplash.com/photo-1530991808291-7e157454758c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9')
 
 Cocktail.create([
   {
@@ -40,6 +40,6 @@ Cocktail.create([
   },
 ])
 
-# Cocktail.first.photo.attach(io: mojito, filename: 'mojito.jpg', content_type: 'image/jpg')
-# Cocktail.second.photo.attach(io: gin_tonic, filename: 'gin_tonic.jpg', content_type: 'image/jpg')
-# Cocktail.third.photo.attach(io: moscow_mule, filename: 'moscow_mule.jpg', content_type: 'image/jpg')
+Cocktail.first.photo.attach(io: mojito, filename: 'mojito.jpg', content_type: 'image/jpg')
+Cocktail.second.photo.attach(io: gin_tonic, filename: 'gin_tonic.jpg', content_type: 'image/jpg')
+Cocktail.third.photo.attach(io: moscow_mule, filename: 'moscow_mule.jpg', content_type: 'image/jpg')
