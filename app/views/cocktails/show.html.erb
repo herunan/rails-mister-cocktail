@@ -25,4 +25,16 @@
       <%= render 'doses/form', coktail: @cocktail, dose: @dose %>
     </div>
   </div>
+  <div class="row">
+    <div id="reviews" class="col-12 col-md-6">
+      <%= render 'reviews/form', cocktail: @cocktail, review: @review %>
+      <% if @cocktail.reviews.blank? %>
+        Be the first to leave a review for the <%= @cocktail.name %>
+      <% else %>
+        <% @cocktail.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
