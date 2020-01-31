@@ -1,5 +1,5 @@
 {
-  "name": "rails-mister-cocktail",
+  "name": "coctelera",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.2.2",

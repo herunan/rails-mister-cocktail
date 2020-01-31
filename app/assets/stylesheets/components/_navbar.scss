@@ -1,28 +1,56 @@
-.navbar-lewagon .navbar-brand, .navbar-lewagon .nav-link, .navbar-toggler-icon {
+.navbar-lewagon .navbar-brand, .navbar-lewagon .nav-link {
   color: $yellow !important;
-  transition: 0.5s ease;
+  transition: $quick;
   &:hover {
     color: $green !important;
   }
+  &:hover #coctelera-logo {
+    filter: invert(76%) sepia(61%) saturate(423%) hue-rotate(93deg) brightness(89%) contrast(87%);
+  }
 }
 
-.navbar-lewagon .form-control {
+#coctelera-logo {
+  filter: invert(99%) sepia(84%) saturate(3089%) hue-rotate(326deg) brightness(102%) contrast(101%);
+  transition: $quick;
+}
+
+#navbar-search {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  padding: 0;
   background-color: black;
   border: none;
   color: $yellow;
   width: 135px;
+  border-radius: 0;
+  border-bottom: 1px solid $yellow;
+  transition: $quick;
+  // &:hover {
+  //   border-bottom: 1px solid $green;
+  // }
   &::placeholder {
     color: $yellow;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
   }
-   &:focus {
-    box-shadow: none;
+  &:hover::placeholder {
+    color: $green;
+  }
+  &:focus {
+    border-bottom: 1px solid black;
     &::placeholder {
       opacity: 0.5;
     }
   }
 }
 
-// li.nav-item:nth-child(1) > a:nth-child(1)
+
+@media (max-width: 576px) {
+#navbar-search {
+  margin: 0;
+  }
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: black;
@@ -35,3 +63,4 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
