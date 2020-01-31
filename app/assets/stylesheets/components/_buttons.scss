@@ -1,0 +1,19 @@
+.btn-primary {
+  transition: $quick;
+  &:hover {
+  background-color: $green;
+  border-color: $green;
+  }
+}
+
+.link {
+  transition: $quick;
+  &:hover {
+  color: $green;
+  text-decoration: none;
+  }
+}
+
+// h2 {
+//   color: $green;
+// }

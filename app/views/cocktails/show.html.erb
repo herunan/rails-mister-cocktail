@@ -4,17 +4,17 @@
     <p><%= @cocktail.description %></p>
   </div>
 </div>
-<div class="container">
+<div id="recipe" class="container">
   <div class="row justify-content-between">
-    <div class="col-12 col-md-6">
+    <div id="method" class="col-12 col-md-6">
       <h2>Method</h2>
-      <p><%= simple_format @cocktail.method %></p>
-      <%= link_to '<i class="fa fa-arrow-left"></i> Back to list of cocktails'.html_safe, root_path, html_options = { :class => "btn btn-primary" } %>
+      <%= simple_format @cocktail.method %>
+      <%= link_to '<i class="fa fa-arrow-left"></i> Back to list of cocktails'.html_safe, root_path, class: "link" %>
     </div>
-    <div id="ingredients" class="col-12 col-md-5">
+    <div id="ingredients" class="col-12 col-md-4">
       <h2>Ingredients</h2>
       <% if @cocktail.doses.blank? %>
-        <p>No ingredients have been added for <%= @cocktail.name %></p>
+        <p>No ingredients have been added for the <%= @cocktail.name %></p>
       <% else %>
         <ul>
           <% @cocktail.doses.each do |dose| %>
@@ -25,16 +25,19 @@
       <%= render 'doses/form', coktail: @cocktail, dose: @dose %>
     </div>
   </div>
-  <div class="row">
-    <div id="reviews" class="col-12 col-md-6">
-      <%= render 'reviews/form', cocktail: @cocktail, review: @review %>
+</div>
+<div id="reviews" class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <h2>Did you try this <%= @cocktail.name %>? <strong>Review it!</strong></h2>
       <% if @cocktail.reviews.blank? %>
-        Be the first to leave a review for the <%= @cocktail.name %>
+        <p id="no-review">Be the first to leave a review for the <%= @cocktail.name %></p>
       <% else %>
         <% @cocktail.reviews.each do |review| %>
           <%= render 'reviews/show', review: review %>
         <% end %>
       <% end %>
+      <%= render 'reviews/form', cocktail: @cocktail, review: @review %>
     </div>
   </div>
 </div>
